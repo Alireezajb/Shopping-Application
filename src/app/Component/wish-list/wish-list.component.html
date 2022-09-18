@@ -1,0 +1,65 @@
+<ng-container *ngIf="wishList.length!=0">
+    <div class="container">
+        <div class="card">
+            <div class="card-table">
+                <div class="cart-product table-responsive">
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th>Sr.no</th>
+                                <th>Product </th>
+                                <th> Name</th>
+                                <th>Description</th>
+                                <th class="text-center">price</th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of wishList; let i  = index;">
+                                <td>{{i+1}}</td>
+                                <td><img style="width: 80px;" src="{{item.image}}" alt=""></td>
+                                <td>{{item.title}}</td>
+                                <td style="width:25%;text-align: justify;">{{item.description}}</td>
+                                <td class="text-center" style="width: 0;">{{item.price}}</td>
+                                <td class="text-center"><i (click)="relmoveItem(item)" style="cursor: pointer;"
+                                        class="bi bi-x-circle "></i></td>
+
+                            </tr>
+
+                            <tr>
+                                <td colspan="4"></td>
+                                <td>
+                                    <button class="btn" (click)="removeWishList()"
+                                        style="background-color: #ea9962; color: #fff;width: 107px;">Remove All</button>
+                                </td>
+                                <td>
+                                    <button class="btn " (click)="addWishToCart()" style="background-color: #00b3a2; color: #fff;">Move To Cart</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ng-container>
+
+
+<ng-container *ngIf="wishList.length == 0">
+    <div class="container">
+        <div class="card">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <img src="https://img.freepik.com/free-vector/online-wishes-list-concept-illustration_114360-3900.jpg?w=740&t=st=1659975800~exp=1659976400~hmac=dc80014c7364cb431f362bb98896f48c9ecae5a4dcf1b1dc9b02191daf7c4251"
+                    class="img-fluid" alt="">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <h4>Your WishList Is Empty!</h4>
+                    <h6>Add Item To It Now</h6>
+                    <button class="btn mt-2 " style="background-color:#fcda74" routerLink="/product">Add Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

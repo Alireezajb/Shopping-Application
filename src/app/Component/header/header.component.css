@@ -1,0 +1,59 @@
+.form-control {
+    border-radius: 3px;
+    width: 100%;
+    /* margin-left: 13px; */
+    /* border: 1px solid red; */
+    margin: 10px 0;
+
+}
+
+.bi-search {
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    right: 10px;
+    font-size: 16px;
+
+
+}
+
+.form-group {
+
+    position: relative;
+    /* border: 1px solid red; */
+    width: 60%;
+
+}
+
+[class*="bi-bag"],
+[class*="bi-person"] {
+    font-size: 22px;
+    padding: 0 5px;
+}
+
+.badge {
+    font-size: 9px;
+    color: #e6ecff;
+    background: #ff6680;
+
+    position: absolute;
+    top: 26px;
+    right: 11px;
+}
+
+.btn {
+    position: relative;
+
+}
+
+button {
+    border: none;
+}
+
+/* .navbar-brand
+{
+    width: 80%;
+} */
+strong {
+    cursor: pointer;
+}

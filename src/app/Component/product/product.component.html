@@ -1,0 +1,167 @@
+<div class="card-top container-fluid p-2">
+    <div class="container-fluid d-flex justify-content-center py-2">
+        <div class="item py-2 px-3">
+            <a (click)="filter('')"
+                class=" text-decoration-none d-flex flex-column justify-content-center align-items-center text-muted">
+                <h6>All Products</h6>
+            </a>
+        </div>
+        <div class="item py-2 px-3">
+            <a (click)="filter('electronics')"
+                class=" text-decoration-none d-flex flex-column justify-content-center align-items-center text-muted">
+                <h6>Electronic</h6>
+            </a>
+        </div>
+        <div class="item py-2 px-3">
+            <a (click)="filter('fashion')"
+                class=" text-decoration-none d-flex flex-column justify-content-center align-items-center text-muted">
+                <h6>Fashion</h6>
+            </a>
+        </div>
+        <div class="item py-2 px-3">
+            <a (click)="filter('jewelery')"
+                class=" text-decoration-none d-flex flex-column justify-content-center align-items-center text-muted">
+                <h6>Jewllery</h6>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let items of filerCategory  | filter:searchKey:'title' " >
+            <div class="card  col-md-6 col-lg-3 ">
+                <img class="m-auto mb-3" [src]=items.image alt="">
+
+                <h6 class="mx-auto" style="white-space:nowrap;overflow:hidden; text-overflow:ellipsis;max-width: 30ch;">
+                    {{items.title}}
+                </h6>
+                <small class="mx-auto mb-3"
+                    style="white-space:nowrap;overflow:hidden; text-overflow:ellipsis;max-width: 30ch;">
+                    {{items.description}}</small>
+
+                <div class="d-flex justify-content-around">
+                    <p class="text-danger fw-bold">${{items.price}}</p>
+                    <p><i class="bi bi-tags me-2"></i>{{items.category}}</p>
+                </div>
+                <button (click)="addToCart(items,$event)" class="btn " style="background-color: #f9d8ac">
+                    <i class="bi bi-bag-plus"></i>
+                    Add To Cart
+                </button>
+                <button (click)="addToWishList(items,$event)" class="btn " style="background-color: #c5a5f3;">
+                    <i class="bi bi-heart"></i>
+                    Add To WishList
+                </button>
+
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+
+
+
+<footer class="text-center text-lg-start bg-white text-muted">
+    <!-- <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+
+        <div>
+            <a href="" class="me-4 link-grayish">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="" class="me-4 link-grayish">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="" class="me-4 link-grayish">
+                <i class="bi bi-google"></i>
+            </a>
+            <a href="" class="me-4 link-grayish">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="" class="me-4 link-grayish">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="" class="me-4 link-grayish">
+                <i class="bi bi-github"></i>
+            </a>
+        </div>
+    </section> -->
+
+    <section class="border border-top">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="bi bi-alexa me-3 text-grayish"></i>
+                        Decomell Shopping
+                    </h6>
+ 
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Products
+                    </h6>
+                    <p>
+                        <a  class="text-reset text-decoration-none">All Products</a>
+                    </p>
+                    <p>
+                        <a  class="text-reset text-decoration-none">Electronic</a>
+                    </p>
+                    <p>
+                        <a  class="text-reset text-decoration-none">Fashion</a>
+                    </p>
+                    <p>
+                        <a  class="text-reset text-decoration-none">Jewllery</a>
+                    </p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Useful links
+                    </h6>
+                    <p>
+                        <a  class="text-reset text-decoration-none">Pricing</a>
+                    </p>
+                    <p>
+                        <a  class="text-reset text-decoration-none">Settings</a>
+                    </p>
+                    <p>
+                        <a  class="text-reset text-decoration-none">Orders</a>
+                    </p>
+                    <p>
+                        <a  class="text-reset text-decoration-none">Help</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="bi bi-house-door-fill me-3 text-grayish"></i>Iran, Khozestan, Ahvaz</p>
+                    <p>
+                        <i class="bi bi-envelope me-3 text-grayish"></i>
+                        alirezajabberi@gmail.com
+                    </p>
+                    <p><i class="bi bi-telephone me-3 text-grayish"></i>+98 901 580 1728</p>
+                    <p><i class="bi bi-printer-fill me-3 text-grayish"></i>999-999 8585-4</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+        © 2022 Copyright:
+        <a class="text-reset fw-bold text-decoration-none">alirezajabberi.com</a>
+    </div>
+</footer>
